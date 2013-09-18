@@ -2,10 +2,12 @@
 
 <h1><%= @post.title %> </h1>
 <% if @post.price %>
-  Price: $<%= @post.price %>
+  Price: <%= @post.price %>
 <% end %>
 <p> <%=  @post.content %></p>
 
-<p>To contact this seller, email: 
-  <%= @post.email  %>
+<p>To contact this seller, send an email here: 
+  <a href=""><%= @post.email  %></a>
 </p>        
+
+<a href="/category/<%= @post.category_id %>">Back to <%= Category.find(@post.category_id).name %></a>

@@ -1,1 +1,5 @@
 <h1>Edit your post</h1>
+
+<form action="/post/edit/<%= @post.id %>" method="POST">
+  <%= erb :_create_edit_post, layout: false %>
+</form>
