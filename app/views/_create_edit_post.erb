@@ -1,0 +1,42 @@
+<div>
+  <label for="category">Category: </label>
+  <select name="post[category_id]" id="category">
+    <% @categories.each do |cat| %>
+    <option value="<%= cat.id %>" 
+      <% if cat.id == @this_category %>
+        selected
+        <% end %>> 
+      <%= cat.name %></option>
+    <% end %>
+  </select>
+</div>
+
+<div>
+  <label for="title">Title:</label>
+  <input id="title" type="text" name="post[title]" value="<%= @post.title%>" >
+</div>
+
+<div>
+  <label for="content">Content: </label>
+  <textarea id="content" cols="100" rows="15" name="post[content]" value="<%= @post.content %>" >
+    <%= @post.content %>
+  </textarea>
+</div>
+
+<div>
+  <label for="price">Price: </label>
+  <input id="price" type="text" name="post[price]" value="<%= @post.price %>" >
+</div>
+
+<div>
+  <label for="email">Your email: </label>
+  <% if @post.email %>
+    <%= @post.email %>
+  <% else %>
+    <input id="email" type="text" name="post[email]" value="<%= @post.email %>" >
+  <% end %>
+</div>
+
+<div>
+  <input type="submit">
+</div>

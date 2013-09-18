@@ -1,7 +1,11 @@
 <div class="container">
   <ul>
     <%  @posts.each do |post| %>
-      <li><a href="/post/<%= @category%>/<%= post.id%>" ><%= post.title %></a></li>
+      <li><a href="/post/?id=<%= post.id%>" ><%= post.title %></a></li>
     <% end %>
   </ul>
 </div>
+<ul>
+<li><a href="/post/create/<%= @category%>" >Create a new post</li>
+<li><a href="/">Back to main page</a></li>
+</ul>

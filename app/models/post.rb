@@ -3,6 +3,6 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :email, presence: true, format: { with: /\S+@\S+\.\S{2,3}/,
+  validates :email, presence: true, format: { with: /\S+@\S+\.\S{2,3}\z/,
                                               message: "Invalid email."}
 end
